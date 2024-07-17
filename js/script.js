@@ -22,8 +22,9 @@ const bmiResult = document.getElementById("bmi-result");
 const kategoriBMI = document.getElementById("kategori-bmi");
 const deskripsiBMI = document.getElementById("deskripsi-bmi");
 const deskripsiArray = [
-  'BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang',
-  'Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran mengenai berat badan Anda'
+  'Makan makanan bergizi, konsumsi protein lebih banyak dan olahraga secara teratur agar mencapai berat badan ideal',
+  'Pertahankan pola makan saat ini dan lakukan aktivitas fisik 3 kali dalam seminggu agar tubuh tetap dalam kondisi optimal',
+  'Jaga pola makan dengan mengurangi makanan tinggi gula ataupun lemak, serta tingkatan aktivitas dan olahraga secara teratur'
 ]
 
 //variabel untuk untuk informasi tambahan dan arrownya
