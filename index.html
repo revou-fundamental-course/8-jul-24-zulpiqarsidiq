@@ -1,47 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title> KALKULATOR BMI </title>
+
 </head>
 
 <body>
+  <header>
     <!-- Main Title -->
-    <header> 
-        <h1 style="color:blue"> Kalkulator BMI </h1>
-    </header>
+    <h1 style="text-align:align left; color:black; font-size: 48px;"> 
+              KALKULATOR BMI 
+    </h1>
+    <p class="description">  
+        berat badan ideal adalah impian semua orang. berat badan yang ideal menandakan kondisi tubuh yang sehat.
+        BMI tidak sepenuhnya mewakili diagnosis, dengan Kalkulator BMI ini akan memberi Anda  gambaran tentang
+        perbandingan beratbadan dengan tinggi badan Anda.                   
+    </p>
+ 
+  <!-- Header Content -->  
+  </header>
+    
+  <!-- Left Content : Container untuk kalkulator BMI -->
+  <div class="container"> 
+    <!-- form kalkulator BMI  -->
+    <div class="container"> </div>
+    <form action="index.html#result" class="question" onsubmit="submitForm(event)">
+      <h4 style="font-style: oblique;"> 
+          Ingin mengetahui berat badan ideal Anda, Silahkan hitung berat Badan ideal Anda disini...
+      </h4>
+      <div class="jeniskelamin">
+        <p> Pilih Jenis Kelamin? </p>
+        <div class="pilih-jeniskelamin">
+          <input type="radio" id="laki-laki" name="jeniskelamin" value="Laki-laki" checked>
+          <label class="label" for="laki-laki">Laki - laki</label>
+          <input type="radio" id="perempuan" name="jeniskelamin" value="Perempuan">
+          <label class="label" for="perempuan">Perempuan</label>
+        </div>
+      </div>
+      
+      <br/>
 
-    <main>
-        <!-- Main Article : Penjelasan Kalkulator BMI -->
-        <article> 
-            <p> Hitung Berat Badan Ideal Anda disini </p>
-        </article>
+      <div class="usia">
+        <p>Berapa usia Anda? (tahun)</p>
+        <div class="input-number">
+          <input type="number"
+            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+            id="usia" 
+            name="usia" >
 
-        <!-- Form : Form Input Data -->
-        <section> </section>
+          <!-- jika usia tidak diisi-->
+          <div class="error">
+            <p id="usiaNull" class=""> <b> Usia harus diisi </b> </p>
+            <p id="usiaRange"> <b> Usia harus diatas 18 Tahun </b> </p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Form Article -->
-        <article> </article>
+      <div class="beratbadanbadan">
+        <p>Berapa berat badan Anda? (kg)</p>
+        <div class="input-number">
+          <input type="number"
+            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+            id="beratbadan" name="beratbadan" 
+          >
+          <div class="error">
+            <p id="beratbadanNull">berat badan harus diisi</p>
+            <p id="beratbadanRange">berat badan harus diantara 3 dan 600</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Result Article : Tampilan Hasil Perhitungan -->
-        <article> 
-            <header> 
-                <h1 style="color:blue"> Hasil Perhitungan </h1>
-            </header>
+      <div class="tinggi">
+        <p>Berapa tinggi kamu? (cm)</p>
+        <div class="input-number">
+          <input type="number" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 &&
+        event.charCode <= 57))" id="tinggi" name="tinggi" >
+          <div class="error">
+            <p id="tinggiNull">Tinggi badan harus diisi</p>
+            <p id="tinggiRange">Tinggi badan harus diantara 30 dan 300 CM</p>
+          </div>
+        </div>
+      </div>
 
-             <!-- Result Section : menampilkan angka hasil perhitungan -->
-            <section> </section>
+      <input type="submit" class="submit" value="Hitung BMI">
+      <input type="reset" class="reset" value="Reset">
+    </form>
 
-            <!-- Result Article : Penjelasan dari hasil perhitungan -->
-            <article> </article>
+    <!-- Right Content Container untuk result : Hasil Perhitungan -->
+    <div id="result" class="result">
+      <h2> Hasil Perhitungan BMI </h2>
+      <p> <span name="answer">Laki - laki</span> usia <span name="answer"> </span> tahun</p>
+      <p> <span name="answer"> </span> kg dan tinggi <span name="answer"> </span> cm</p>
+      <p> BMI Anda :</p> 
+      <br/> <br/>
+      <p id="bmi-result"> </p>
+      <h3 id="kategori-bmi"> </h3>
+      <p id="deskripsi-bmi" style="text-align:justify; font-size:14px;"> 
+          BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang,
+          Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran mengenai berat badan Anda.
+      </p>
+      <br>
+      <a class="konsultasi"
+        href="https://www.halodoc.com/tanya-dokter/cari?source=com.halodoc.bmicalculator&category_id=426fb851-f268-4332-8aa3-52c0ff78c27f&category_name=Ahli%20Gizi"
+        target="_blank">Konsultasi
+        Ahli Gizi</a>
+    </div>
+  </div>
 
-             <!-- Result Section : Informasi Tambahan -->
-             <section> </section>
+  <!-- Container untuk informasi mengenai BMI -->
+  <div class="info">
+    <div id="informasi-tambahan">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        style="height: 2rem; color: blue;">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+      </svg>
+      <p> <b> Informasi Tambahan </b> </p>
+    </div>
 
-        </article>
+    <!-- Pertanyaan 1 -->
+    <div>
+      <div onclick="rotate(0)" class="info-question">
+        <p> Apa itu BMI (Body Mass Index)?</p>
+        <div class="arrow" style="display: flex; justify-content: space-between; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" style="height: 1.5rem;">
+            <path stroke-linecap=" round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+      </div>
+      <div class="info-answer">
+        <p>
+          BMI adalah indikator pengukuran yang digunakan untuk menentukan kategori beratbadan badan ideal atau tidak. Metode
+          ini dikembangkan oleh Adolphe Quetelet selama abad ke-19. Melalui hasil perhitungan BMI, kamu akan mengetahui
+          kategori berat badan Anda, apakah kurus, ideal, berlebihan, atau obesitas. Disisi lain, BMI juga bisa
+          menjadi alat skrining awal untuk melihat risiko kesehatan tertentu. Menurut WHO, hasil BMI yang tidak
+          normal/ideal akan meningkatkan risiko terkena penyakit.
+        </p>
+      </div>
+    </div>
 
+    <!-- Pertanyaan 2 -->
+    <div>
+      <div onclick="rotate(1)" class="info-question">
+        <p> Bagaimana cara menghitung BMI?</p>
+        <div class="arrow" style="display: flex; justify-content: space-between; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" style="height: 1.5rem;">
+            <path stroke-linecap=" round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+      </div>
+      <div class="info-answer">
+        <p>
+          Cara menghitung BMI yaitu dengan membagi berat badan (dalam satuan kilogram) dan tinggi badan
+          (dalam satuan meter kuadrat). Rumus BMI = berat badan (kg) : (tinggi badan (m))<sup>2</sup>
+        </p>
+        <p>
+          Dari hasil perhitungan BMI tersebut, Anda bisa membandingkannya ke dalam standar kategori berat badan tubuh Perempuan
+          atau Laki-Laki. Menurut WHO, pengelompokkan BMI adalah sebagai berikut.
+        </p>
+        <ul>
+          <li>berat badan di bawah normal jika angka BMI di bawah 18,5</li>
+          <li>berat badan normal jika angka BMI di antara 18,5 sampai 24,9.</li>
+          <li>berat badan berlebih jika angka BMI di antara 25 sampai 29,9</li>
+          <li>Obesitas jika angka BMI adalah 30 atau lebih.</li>
+        </ul>
+      </div>
+    </div>
 
-    </main>
+    <!-- Pertanyaan 3 -->
+    <div>
+      <div onclick="rotate(2)" class="info-question">
+        <p> Apa manfaat dari menghitung BMI?</p>
+        <div class="arrow" style="display: flex; justify-content: space-between; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" style="height: 1.5rem;">
+            <path stroke-linecap=" round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+      </div>
+      <div class="info-answer">
+        <p>Manfaat yang didapat setelah menghitung BMI yaitu:</p>
+        <ol class="message" id="message" style="margin: 0">
+          <li>Menghitung berat badan</li>
+          <li>Menentukan kategori berat badan ideal atau tidak</li>
+          <li>Mempersiapkan program penurunan atau peningkatan berat badan</li>
+        </ol>
+        <p>
+          BMI yang ideal umumnya mengarah pada kualitas hidup yang lebih bahagia dan lebih sehat. Sementara BMI yang
+          tinggi berkaitan erat dengan risiko penyakit seperti diabetes tipe 2, penyakit jantung, dan tekanan darah
+          tinggi. Mengetahui BMI berarti memberi pertimbangan bagi Anda dan tenaga kesehatan dalam mengambil keputusan
+          mengenai kondisi kesehatan tubuh Anda.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pertanyaan 4 -->
+    <div>
+      <div onclick="rotate(3)" class="info-question">
+        <p> Siapa yang boleh menggunakan kalkulator BMI?</p>
+        <div class="arrow" style="display: flex; justify-content: space-between; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" style="height: 1.5rem;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+      </div>
+      <div class="info-answer">
+        <p>
+          Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil dan menyusui tidak   
+          boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan   
+          nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter. <br/> <br/>
+          Kalkulator akan memberikan Anda gambaran tentang perbandingan berat badan Anda dengan nilai    
+          umum.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="made-by">
+      <p style="text-align: black; font-size: 18px;"> 
+        <marquee><b>Kalkulator BMI - Ramdhani Zulpiqar Sidiq</b></marquee>
+      </p>
+    </div>
+  </footer>
 </body>
+
+<script src="./js/script.js"></script>
+
 </html>
