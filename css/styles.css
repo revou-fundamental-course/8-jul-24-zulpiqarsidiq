@@ -1,1 +1,246 @@
-/*Ini cs */
+ {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* background header */
+header {
+  background-color: #89d6f4;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+html,
+body {
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Copperplate', sans-serif;
+}
+
+/* background body (belakang) */
+html {
+  background-color: #a6f4eb; 
+  
+}
+
+/* background footer */
+body {
+  background: #F4F2DE;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* description di Header */
+.description {
+  width: 100%;
+  text-align: justify;
+}
+
+.icon {
+  position: absolute;
+  width: 15%;
+  right: 24px;
+  bottom: -80px;
+}
+
+/* background belakang left dan right content */
+.container {
+  background-color: whitesmoke;
+  padding: 2rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* from Input Data dan hasil BMI */
+.question,
+.result {
+  flex: 1;
+  min-width: 300px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.jeniskelamin {
+  margin-bottom: 1rem;
+}
+
+.pilih-jeniskelamin {
+  margin: 0.5rem 0;
+}
+
+/* button jenis kelamin */ 
+.label {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+  position: relative;
+  cursor: pointer;
+  margin-right: 1rem;
+  font-size: 0.75rem;
+}
+
+input[type=radio]:checked+label {
+  background-color: rgb(55 78 128);
+  color: hsla(215, 0%, 100%, 1);
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.input-number{
+  margin: 0.5rem 0 1rem;
+}
+input[type=number] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  width: 95%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* hide arrow in input number for mozilla browser*/
+  -moz-appearance: textfield;
+}
+
+/* hide arrow in input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error{
+  margin-top: 8px;
+  color: red;
+  font-size: 12px;
+}
+#usiaNull, #usiaRange, #beratbadanNull, #beratbadanRange, #tinggiNull, #tinggiRange{
+  display: none;
+} 
+
+/*button hitung BMI dan Reset */
+.submit,
+.reset {
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 3rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: rgb(187 208 255);
+}
+
+.reset {
+  background-color: white;
+}
+
+/* layar hasil hitung BMI*/ 
+.result {
+  /*background-color: aliceblue;*/
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-radius: 0.5rem;
+  margin: auto;
+}
+
+#bmi-result {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+#kategori-bmi {
+  color: rgb(40, 216, 90);
+  margin-bottom: 0.5rem;
+}
+
+/* tampilan informasi */ 
+.info {
+  margin: 2rem;
+}
+
+#informasi-tambahan {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.konsultasi {
+  padding: 0.5rem 2rem;
+  background-color: rgb(55 78 128);
+  color: hsla(215, 0%, 100%, 1);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.info-question {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px rgb(211, 211, 211);
+  cursor: pointer;
+}
+.info-question:hover{
+  background-color: #eeecd2;
+}
+
+.arrow {
+  transition: all 0.75s ease;
+  transform: rotate(0);
+}
+
+.rotates {
+  transform: rotate(180deg);
+}
+
+.info-answer {
+  margin: 4px;
+  padding: 0 1.5rem;
+  text-align: justify;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;  /*posisi tulisan footer*/
+  background-color: #E9B384;
+  margin: 0;
+  height: 200px; /*ukuran footer*/
+}
+
+.made-by{
+  display: flex;
+  align-items: flex-end;
+  font-size: small;
+  text-align: center;
+  margin: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .icon {
+    display: none;
+  }
+  .description{
+    width: 100%;
+    font-size: medium;
+    font-family:Copperplate;  
+  }
+
+}
